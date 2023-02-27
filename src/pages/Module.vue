@@ -1,14 +1,10 @@
 <template>
-  <q-page class="q-pa-md">
-    {{ $route.params.moduleName }}
-    {{ $route.query }}
-    <br>
-    {{ moduleName }} -{{ mode }}
+  <q-page class="q-pa-md bg-grey-3">
     <div class="row">
-      <div class="col" v-if="mode">
+      <q-card class="col-md-4 q-pa-md q-mx-md" v-if="mode">
         <component :is="formComponent">
         </component>
-      </div>
+      </q-card>
       <div class="col">
         <component :is="tableComponent"></component>
 
@@ -16,7 +12,7 @@
     </div>
 
 
-</q-page>
+  </q-page>
 </template>
 <script>
 import { defineAsyncComponent } from 'vue'
